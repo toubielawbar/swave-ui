@@ -1,0 +1,79 @@
+.sw_align {
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+    }
+  
+    &-center {justify-self: center;}
+    &-right {justify-self: end;}
+    &-middle {
+      display: grid;
+      place-items: center; 
+      height: 100vh;
+    }
+    &-bottom {
+      display: grid;
+      &-item {align-self: end;}
+    }
+  }
+  
+  .sw_float {
+    &-left {
+      @include align(left);
+    }
+    &-right {
+      @include align(right);
+    }
+    &-none {
+      @include align(none);
+    }
+  }
+  
+  .sw_translate {
+    transform: translate(-50%, -50%) !important;
+    &-x {
+        transform: translateX(-50%) !important;
+    }
+    &-y {
+        transform: translateY(-50%) !important;
+    }
+  }
+  
+  @while ($left <= 100) {
+    .sw_left-#{$left} {
+        left: $left * 1% !important;
+    }
+    $left: $left + 10;
+  }
+  
+  
+  @while ($right <= 100) {
+    .sw_right-#{$right} {
+      right: $right * 1% !important;
+    }
+    $right: $right + 10;
+  }
+  
+  
+  @while ($top <= 100) {
+    .sw_top-#{$top} {
+      top: $top * 1% !important;
+    }
+    $top: $top + 10;
+  }
+  
+  
+  
+  @while ($bottom <= 100) {
+    .sw_bottom-#{$bottom} {
+      bottom: $bottom * 1% !important;
+    }
+    $bottom: $bottom + 10;
+  }
+  
+  
+  @each $edge in $edges {
+    .sw_edge-#{$edge} {
+        @include edge(#{$edge}, 0);
+    }
+  }

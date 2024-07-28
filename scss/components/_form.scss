@@ -1,0 +1,778 @@
+.sw_form {
+    & select {
+        & option {
+            @include default-font();
+            @include default-font-small();
+        }
+    }
+
+    &-field {
+        & > .sw_form-addon, & > .sw_form-input, & > .sw_form-select, & > .sw_form-horizontal input, & > .sw_file-input, & > .sw_grid-row {
+            margin-bottom: 1rem;
+        }
+    }
+    &>label, &>select>option {
+        @include default-font-small();
+    }
+    &-label {@include default-font-smaller();}
+    &-input, &-select, &-file-label {
+        @include input();
+        font-size: var(--normal-fontsize);
+        padding: var(--normal-padding);
+        
+
+        &:placeholder-shown {
+            @include default-font-small();
+            opacity: .7;
+        }
+        &:disabled {
+            @include disabled();
+        }
+        &[readonly] {
+            background-color: map-get($spectrum_array , gainsboro);
+        }
+
+        &-largest {
+            padding: var(--largest-padding);
+            font-size: var(--largest-fontsize);
+            &:placeholder-shown {
+                @include default-font-largest();
+            }
+        }
+    
+        &-larger {
+            padding: var(--larger-padding);
+            font-size: var(--larger-fontsize);
+            &:placeholder-shown {
+                @include default-font-larger();
+            }
+        }
+    
+        &-large {
+            padding: var(--large-padding);
+            font-size: var(--large-fontsize);
+            &:placeholder-shown {
+                @include default-font-large();
+            }
+        }
+    
+        &-small {
+            padding: var(--small-padding);
+            font-size: var(--small-fontsize);
+            &:placeholder-shown {
+                @include default-font-small();
+            }
+        }
+    
+        &-smaller {
+            padding: var(--smaller-padding);
+            font-size: var(--smaller-fontsize);
+            &:placeholder-shown {
+                @include default-font-smaller();
+            }
+        }
+    
+        &-smallest {
+            padding: var(--smallest-padding);
+            font-size: var(--smallest-fontsize);
+            &:placeholder-shown {
+                @include default-font-smallest();
+            }
+        }
+    }
+    &-select {
+        background: transparent url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+        background-size: 8px 10px;-webkit-appearance: none;-moz-appearance: none;appearance: none;
+    }
+
+    &-file {
+        position: relative;
+        display: map-get($display_array, inline-block);
+        width: 100%;
+        margin-bottom: 1rem;
+        height: 2.25rem;
+
+        &-label {
+            @include user-select();
+            @include central(0, 5, "trl");
+            pointer-events: none;
+            line-height: 1.5;
+            padding: .3rem 1rem;
+            height: 2.25rem;
+
+            &:lang(en) {
+                &::before {
+                    content: "Browse";
+                }
+                &:empty::after {
+                    @include default-font-small();
+                    content: "Select File...";
+                }
+            }
+
+            &::before {
+                @include central(-1, 6, "tbr");
+                @include default-font-small();
+                @include default-border();
+                display: map-get($display_array, block);
+                background-color: $default-bg;
+                height: 2.25rem;
+                padding: .5rem 1rem;
+                line-height: 1.5;
+            }
+    
+        }
+
+        & > .sw_form-input {
+            min-width: 18rem;
+            width: 100%;
+            height: 2.25rem;
+            margin: 0;
+            opacity: 0;
+        }
+
+        &-largest {
+            height: 3.75rem;
+
+            & > .sw_form-file-label {
+                @include default-font-larger();
+                line-height: 2.5;
+                padding: .1rem 1.5rem;
+                height: 3.75rem;
+
+                &:lang(en) {
+                    &:empty::after {
+                        @include default-font-larger();
+                    }
+                }
+
+                &::before {
+                    @include default-font-larger();
+                    height: 3.75rem;
+                    padding: .1rem 1.75rem;
+                    line-height: 2.5;
+                }
+            }
+        }
+
+        &-larger {
+            height: 3.25rem;
+            & > .sw_form-file-label {
+                @include default-font-large();
+                line-height: 2;
+                padding: .5rem 1rem;
+                height: 3.25rem;
+
+                &:lang(en) {
+                    &:empty::after {
+                        @include default-font-large();
+                    }
+                }
+
+                &::before {
+                    @include default-font-large();
+                    height: 3.25rem;
+                    padding: .5rem 1.5rem;
+                    line-height: 2;
+                }
+            }
+        }
+
+        &-large {
+            height: 2.75rem;
+            & > .sw_form-file-label {
+                @include default-font-normal();
+                line-height: 1.75;
+                padding: .5rem 1.25rem;
+                height: 2.75rem;
+
+                &:lang(en) {
+                    &:empty::after {
+                        @include default-font-normal();
+                    }
+                }
+
+                &::before {
+                    @include default-font-normal();
+                    height: 2.75rem;
+                    padding: .5rem 1rem;
+                    line-height: 1.75;
+                }
+            }
+        }
+
+        &-small {
+            height: 2rem;
+            & > .sw_form-file-label {
+                @include default-font-smaller();
+                line-height: 1.25;
+                padding: .5rem 1.25rem;
+                height: 2rem;
+
+                &:lang(en) {
+                    &:empty::after {
+                        @include default-font-smaller();
+                    }
+                }
+
+                &::before {
+                    @include default-font-smaller();
+                    height: 2rem;
+                    padding: .5rem 1rem;
+                    line-height: 1.5;
+                }
+            }
+        }
+
+    }
+
+    &-check {
+        display: map-get($display_array, block);
+        margin-bottom: .6rem;
+        position: relative;
+        &-label {
+            @include cursor(pointer);
+            @include default-font-small();
+            display: map-get($display_array, inline-block);
+            position: relative;
+            padding-left: 30px;
+            padding-right: 15px;
+            line-height: 20px;
+            margin-bottom: 0;  
+
+            &::before, &::after {
+                @include input-btn-pseudo("check");
+            }
+
+            &::after {
+                @include no-border();
+                @include text-align(center);
+                content: $check-mark;
+                color: $default-text-color;
+                top: 0;
+                opacity: 0;
+            }
+
+        }
+        & > input {
+            @include input-btn();
+            &+& .input-label {
+                &:after {
+                    opacity: 0;
+                }
+            }
+
+            &:checked {
+                &+.sw_form-check-label {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:disabled {
+                &+.sw_form-check-label {
+                    @include disabled();
+                }
+            }
+        }
+
+        &-outline {
+            & > .sw_form-check-label {
+                &::before, &::after {
+                    @include outlined();
+                }
+            }
+        }
+    }
+
+    &-radio {
+        display: map-get($display_array, block);
+        margin-bottom: .6rem;
+        position: relative;
+        &-label {
+            @include cursor(pointer);
+            @include default-font-small();
+            display: map-get($display_array, inline-block);
+            position: relative;
+            padding-left: 30px;
+            padding-right: 15px;
+            line-height: 20px;
+            margin-bottom: 0;  
+
+            &::before, &::after {
+                @include input-btn-pseudo("radio");
+            }
+
+        }
+        & > input {
+            @include input-btn();
+            &+& .input-label {
+                &:after {
+                    opacity: 0;
+                }
+            }
+
+            &:checked {
+                &+.sw_form-radio-label {
+                    &::after {
+                        width: 3px;
+                        height: 3px;
+                        background-color: $default-text-color;
+                        border-color: $default-text-color;
+                        top: 12px;
+                        left: 12px;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &:disabled {
+                &+.sw_form-radio-label {
+                    @include disabled();
+                }
+            }
+        }
+
+        &-outline {
+            & > .sw_form-radio-label {
+                &::before, &::after {
+                    @include outlined();
+                }
+            }
+        }
+    }
+
+    &-switch {
+        @include no-appearance();
+        @include cursor(pointer);
+        @include no-border();
+        @include default-font-normal();
+        background-color: $default-bg;
+        position: relative;
+        width: 3em;
+        height: 1.5em;
+        box-sizing: content-box;
+        border-radius: 1.25em;
+        vertical-align: middle;
+        margin: auto;
+
+        
+        &::before {
+            @include mini-transition(.4);
+            @include round();
+            background: $default-clear-bg;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            box-sizing: border-box;
+            width: 1.2em;
+            height: 1.2em;
+            margin: 0 0.15em;
+        }
+        &-label {@include cursor(pointer);}
+        &:checked {
+            background-color: $default-color;
+            &::before {
+               
+                left: 1.5em;
+            }
+        }
+    }
+
+    &-addon {
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include align-items(stretch);
+        position: relative;
+        width: 100%;
+
+        &>input, &>select, &>textarea {
+            position: relative;
+            flex: 1 1 auto;
+            width: 1%;
+            min-width: 0;
+        }
+        & .addon-icon, & .addon-text {
+            @include flex-align();
+            @include text-align(center);
+            @include default-border(); 
+            @include default-font-normal();
+            padding: var(--normal-icon-padding);
+            line-height: 1.5;
+            background-color: transparent;
+            white-space: nowrap;
+        }
+
+        & .addon-icon:not(button), & .addon-text:not(button) {@include cursor(text);}
+
+        & .addon-click,  &>button {@include cursor(pointer) }
+
+        &-prepend {
+            &>input, &>select, &>textarea {
+                @include no-border-direction(left);
+            }
+            & .addon-merge {
+                @include no-border-direction(right);
+            }
+        }
+
+        &-append {
+            &>input, &>select, &>textarea {
+                @include no-border-direction(right);
+            }
+            & .addon-merge {
+                @include no-border-direction(left);
+            }
+        }
+
+        &-double {
+            &>input, &>select, &>textarea {
+                @include no-border-direction(left);
+                @include no-border-direction(right);
+            }
+            & .addon-merge-prepend {
+                @include no-border-direction(right);
+            }
+
+            & .addon-merge-append {
+                @include no-border-direction(left);
+            }
+        }
+
+        &.sw_minimal {
+            &>input, &>select, &>textarea, & .addon-icon, &>.addon-text {
+                @include no-border();
+            }
+        }
+
+        &.sw_no-br {
+            &>input, &>select, &>textarea, & .addon-icon, &>.addon-text {
+                @include no-border();
+            }
+        }
+
+        &-largest {
+            &>input, &>select, &>textarea, &>.addon-icon, &>.addon-text {
+                padding: var(--largest-padding);
+                font-size: var(--largest-fontsize);
+                &:placeholder-shown {
+                    @include default-font-largest();
+                }
+            }
+        }
+
+        &-larger {
+            &>input, &>select, &>textarea, &>.addon-icon, &>.addon-text {
+                padding: var(--larger-padding);
+                font-size: var(--larger-fontsize);
+                &:placeholder-shown {
+                    @include default-font-larger();
+                }
+            }
+        }
+
+        &-large {
+            &>input, &>select, &>textarea, &>.addon-icon, &>.addon-text {
+                padding: var(--large-padding);
+                font-size: var(--large-fontsize);
+                &:placeholder-shown {
+                    @include default-font-large();
+                }
+            }
+        }
+
+        &-small {
+            &>input, &>select, &>textarea, &>.addon-icon, &>.addon-text {
+                padding: var(--small-padding);
+                font-size: var(--small-fontsize);
+                &:placeholder-shown {
+                    @include default-font-small();
+                }
+            }
+        }
+
+        &-smaller {
+            &>input, &>select, &>textarea, &>.addon-icon, &>.addon-text {
+                padding: var(--smaller-padding);
+                font-size: var(--smaller-fontsize);
+                &:placeholder-shown {
+                    @include default-font-smaller();
+                }
+            }
+        }
+
+        &-smallest {
+            &>input, &>select, &>textarea, &>.addon-icon, &>.addon-text {
+                padding: var(--smallest-padding);
+                font-size: var(--smallest-fontsize);
+                &:placeholder-shown {
+                    @include default-font-smallest();
+                }
+            }
+        }
+        & {
+            .sw_dropdown-content {
+                margin-top: 3rem !important;
+            }
+        }
+    }
+    
+    &-styled {@include styled-fit();}
+
+    &-horizontal {
+        &:after {
+            content: ""; 
+            display: map-get($display_array, table); 
+            clear: both;
+        }
+        &-grid {
+            &>label {
+                margin-top: .5rem;
+            }
+        }
+    }
+
+    &-inline {
+        @include flex-align();
+        @include flex-flow(row wrap);
+        &>label {
+            margin: .5rem 1rem .5rem 0;
+        }
+        &>input, &>select, &>textarea, &>div {
+            vertical-align: middle;
+            margin: .5rem 1rem .5rem 0;
+        }
+    }
+
+}
+
+.sw_file {
+    &-input {
+        @include no-appearance();
+        @include default-border();
+        @include default-font-small();
+        display: map-get($display_array, block);
+        height: 2.25rem;
+        line-height: 1.5rem;
+        width: 100%;
+        overflow: hidden;
+
+        &::-webkit-file-upload-button, &::file-selector-button {
+            @include flex-center();
+            @include no-border();
+            @include cursor(pointer);
+            @include user-select();
+            @include default-font-small();
+            display: map-get($display_array, inline-flex);
+            background-color: $default-bg;
+            height: 100%;
+            line-height: 1.5rem;
+            margin-right: 1rem; 
+            padding: 0 1rem;
+
+        }
+
+        &-largest {
+            @include default-font-larger();
+            height: 3.75rem;
+            line-height: 2.5;
+
+            &::-webkit-file-upload-button, &::file-selector-button {
+                @include default-font-larger();
+                height: 3.75rem;
+                line-height: 2.5;
+            }
+        }
+
+        &-larger {
+            @include default-font-large();
+            height: 3.25rem;
+            line-height: 2;
+
+            &::-webkit-file-upload-button, &::file-selector-button {
+                @include default-font-large();
+                height: 3.25rem;
+                line-height: 2;
+            }
+        }
+
+        &-large {
+            @include default-font-normal();
+            height: 2.75rem;
+            line-height: 1.75;
+
+            &::-webkit-file-upload-button, &::file-selector-button {
+                @include default-font-normal();
+                height: 2.75rem;
+                line-height: 1.75;
+            }
+        }
+
+        &-small {
+            @include default-font-smaller();
+            height: 2rem !important;
+            line-height: 1.25 !important;
+
+            &::-webkit-file-upload-button, &::file-selector-button {
+                @include default-font-smaller();
+                height: 2rem !important;
+                line-height: 1.25 !important;
+            }
+        }
+
+        &-smaller {
+            @include default-font-smallest();
+            height: 1.75rem !important;
+            line-height: 1 !important;
+
+            &::-webkit-file-upload-button, &::file-selector-button {
+                @include default-font-smallest();
+                height: 1.75rem !important;
+                line-height: 1 !important;
+            }
+        }
+
+    }
+}
+
+@for $hor from 1 through 9 {
+    .sw_form-horizontal-grid {
+        &.grid-#{$hor * 10}  {
+            float: left;
+            width: $hor * 10%;
+        }  
+    }
+ }
+
+@for $rsq from 1 through 8 {
+    .sw_form-file.sw_rsq-#{$rsq} {
+        & {
+            .sw_form-file-label {
+                border-radius: calc($rsq / 4) + $rem;
+                &::before {
+                    border-radius: 0 calc($rsq / 4) + $rem calc($rsq / 4) + $rem 0;
+                   }  
+            }
+        }
+    }
+
+    .sw_form-addon-prepend.sw_rsq-#{$rsq} {
+        & {
+            .addon-icon, .addon-text {
+                border-radius: calc($rsq / 4) + $rem 0 0 calc($rsq / 4) + $rem;
+            }
+            input, select, textarea {
+                border-radius: 0 calc($rsq / 4) + $rem calc($rsq / 4) + $rem 0 !important;
+            }
+        }
+    }
+
+    .sw_form-addon-append.sw_rsq-#{$rsq} {
+        & {
+            .addon-icon, .addon-text {
+                border-radius: 0 calc($rsq / 4) + $rem calc($rsq / 4) + $rem 0;
+            }
+            input, select, textarea {
+                border-radius: calc($rsq / 4) + $rem 0 0 calc($rsq / 4) + $rem !important;
+            }
+        }
+    }
+
+    .sw_form-addon-double.sw_rsq-#{$rsq} {
+        & {
+           .addon-icon:first-child, .addon-text:first-child {
+                border-radius: calc($rsq / 4) + $rem 0 0 calc($rsq / 4) + $rem;
+           }
+           .addon-icon:last-child, .addon-text:last-child {
+                border-radius: 0 calc($rsq / 4) + $rem calc($rsq / 4) + $rem 0;
+           }
+        }
+    }
+
+}
+
+@each $spectrum, $spectrum_value in $spectrum_array {
+    .sw_file-input.bg-#{"" + $spectrum} { 
+        @include no-bg();
+        border-color: $spectrum-value;
+
+        &::-webkit-file-upload-button, &::file-selector-button {
+            background-color: $spectrum_value;
+            //@include lighten-st($spectrum_value, 50);
+        }
+        
+    }
+    .sw_file-input.br-#{"" + $spectrum} {
+        border-color: $spectrum-value;
+
+        &::-webkit-file-upload-button, &::file-selector-button {
+            @include no-border();
+            background-color: $spectrum_value;
+        }
+    }
+
+    .sw_form-check.bg-#{"" + $spectrum} {
+        @include no-bg();
+        & > .sw_form-check-label {
+            &::before, &::after {
+                background-color: $spectrum_value;
+            }
+            //&::after {@include lighten-st($spectrum_value, 50);}
+        }
+    }
+
+    .sw_form-radio.bg-#{"" + $spectrum} {
+        @include no-bg();
+        & > .sw_form-radio-label {
+            &::before, &::after {
+                background-color: $spectrum_value;
+            }
+            //&::after {@include lighten-st($spectrum_value, 50);}
+        }
+    }
+}
+
+@each $lighter_spectrum, $lighter_spectrum_value in $spectrum_array {
+    .sw_file-input.bg-#{"" + $lighter_spectrum}-light { 
+        @include no-bg();
+        border-color: rgba($lighter_spectrum_value, 0.35);
+
+        &::-webkit-file-upload-button, &::file-selector-button {
+            background-color: rgba($lighter_spectrum_value, 0.35);
+            //@include lighten-st($lighter_spectrum_value, 50);
+        }
+        
+    }
+    .sw_file-input.br-#{"" + $lighter_spectrum}-light {
+        border-color: rgba($lighter_spectrum_value, 0.35);
+
+        &::-webkit-file-upload-button, &::file-selector-button {
+            @include no-border();
+            background-color: rgba($lighter_spectrum_value, 0.35);
+        }
+    }
+
+    .sw_form-check.bg-#{"" + $lighter_spectrum}-light {
+        @include no-bg();
+        & > .sw_form-check-label {
+            &::before, &::after {
+                background-color: rgba($lighter_spectrum_value, 0.35);
+            }
+            //&::after {@include lighten-st($lighter_spectrum_value, 50);}
+        }
+    }
+
+    .sw_form-radio.bg-#{"" + $lighter_spectrum}-light {
+        @include no-bg();
+        & > .sw_form-radio-label {
+            &::before, &::after {
+                background-color: rgba($lighter_spectrum_value, 0.35);
+            }
+            //&::after {@include lighten-st($lighter_spectrum_value, 50);}
+        }
+    }
+}
+

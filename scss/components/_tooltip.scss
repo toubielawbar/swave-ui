@@ -1,0 +1,63 @@
+.sw_tooltip {
+    @include popup();
+    @include styled();
+    z-index: $zindex-tooltip;
+    max-width: 200px;
+
+    &-wrapper {
+        @include default-font-small();
+        padding: var(--normal-padding);
+    }
+
+    &-top  {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: $default-clear-bg transparent transparent transparent;
+        }
+    }
+
+    &-right {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px; 
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent $default-clear-bg transparent transparent;
+        }
+    }
+
+    &-bottom  {
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 100%; 
+            left: 50%;
+            margin-left: -5px; 
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent $default-clear-bg transparent;
+        }
+    }
+
+    &-left {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            margin-top: -5px; 
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent $default-clear-bg;
+        }
+    }
+}

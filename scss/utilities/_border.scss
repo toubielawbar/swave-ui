@@ -1,0 +1,28 @@
+@each $type in $border_array {
+    @for  $i from 1 through 5 {
+        .sw_br-#{$i}-#{$type} {@include border($i + px, $type, transparent)}
+    }
+}
+
+@for $i from 1 through 8 {
+    .sw_rsq-#{$i} {
+        border-radius: calc(($i / 4)) + $rem !important;
+    }
+}
+
+.sw_minimal {@include minimal($default-border-color);} 
+.sw_no-br {
+    @include no-border();
+    &-top {
+        @include no-border-direction(top);
+    }
+    &-bottom {
+        @include no-border-direction(bottom);
+    }
+    &-left {
+        @include no-border-direction(left);
+    }
+    &-right {
+        @include no-border-direction(right);
+    }
+}

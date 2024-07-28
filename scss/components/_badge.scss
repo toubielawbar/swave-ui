@@ -1,0 +1,55 @@
+.sw_badge {
+    @include no-outline();
+    @include border-with-color(transparent);
+    @include text-align(center);
+    padding: var(--normal-padding);
+    font-size: var(--normal-fontsize);
+    display: map-get($display_array,  inline-block);
+    background-color: $default-bg;
+    color: $default-text-color;
+    line-height: 1; 
+
+    &:empty {
+        @include no-display();
+    }
+
+    &-largest {
+        padding: var(--largest-padding);
+        font-size: var(--largest-fontsize);
+    }
+
+    &-larger {
+        padding: var(--larger-padding);
+        font-size: var(--larger-fontsize);
+    }
+
+    &-large {
+        padding: var(--large-padding);
+        font-size: var(--large-fontsize);
+    }
+
+    &-small {
+        padding: var(--small-padding);
+        font-size: var(--small-fontsize);
+    }
+
+    &-smaller {
+        padding: var(--smaller-padding);
+        font-size: var(--smaller-fontsize);
+    }
+
+    &-smallest {
+        padding: var(--smallest-padding);
+        font-size: var(--smallest-fontsize);
+    }
+
+    &-outline {
+        @include default-border();
+        @include no-bg();
+    }
+
+    &-styled {
+        @include styled();
+    }
+    &-outline {@include outlined();}
+}

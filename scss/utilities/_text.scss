@@ -1,0 +1,87 @@
+.st {
+    &_align {
+        &-left {
+            @include text-align(left);
+        }
+        &-right {
+            @include text-align(right);
+        }
+        &-center {
+            @include text-align(center);
+        }
+        &-justify {
+            @include text-align(justify);
+        }
+    }
+
+    &_weight {
+        &-normal {
+            @include text-weight(normal)
+        }
+        &-bold {
+            @include text-weight(bold);
+        }
+        &-light {
+            @include text-weight(lighter);
+        }
+    }
+
+    &_style {
+        &-normal {
+            @include text-style(normal)
+        }
+        &-italic {
+            @include text-style(italic)
+        }
+        &-oblique {
+            @include text-style(oblique)
+        }
+    }
+
+    &_case {
+        &-upper {
+            @include text-case(uppercase);
+        }
+        &-lower {
+            @include text-case(lowercase);
+        }
+        &-capital {
+            @include text-case(capitalize);
+        }
+    }
+
+    &_line {
+        &-under {
+            @include text-decoration(underline);
+        }
+        &-over {
+            @include text-decoration(overline);
+        }
+        &-through {
+            @include text-decoration(line-through)
+        }
+        &-solid {
+            @include text-decoration(solid)
+        }
+        &-dotted {
+            @include text-decoration(dotted)
+        }
+    
+        &-dashed {
+            @include text-decoration(dashed)
+        }
+        &-double {
+            @include text-decoration(double)
+        }
+        &-wavy {
+            @include text-decoration(wavy)
+        }
+    }
+
+    @for $st_space from 1 to 11 {
+        &_space-#{$st_space} {
+            letter-spacing: #{$st_space} + px;
+        }
+    }
+    
+}

@@ -1,0 +1,63 @@
+.sw_flex {
+    @include flexbox();
+    &-item {
+        &-left {order: -1;}
+        &-right {order: 1;}
+        &-center {@include margin-center();}
+    }
+    &-center {@include flex-center();}
+    &-end {@include flex-end()}
+
+    &-space {
+        &-between {@include justify-content(space-between);}
+        &-around {@include justify-content(space-around);}
+        &-evenly {@include justify-content(space-evenly);}
+    }
+
+    &-horizontal {
+        @include flex-direction(row);
+        &-inverted {@include flex-direction(row-reverse);}
+    }
+    &-vertical {
+        @include flex-direction(column);
+        &-inverted {@include flex-direction(column-reverse);}
+    }
+    &-wrap {@include flex-wrap(wrap);}
+    &-flow {@include flex-flow(row wrap);}
+    &-align {
+        &-start {@include align-items(flex-start);}
+        &-end {@include align-items(flex-end);}
+        &-center {@include align-items(center);}
+        &-stretch {@include align-items(stretch);}
+        &-baseline {@include align-items(baseline);}
+    }
+    &-gap {
+        @for $i from 1 through 100 {
+            &-#{$i} {
+                gap: $i+px
+            }
+        }
+    }
+    &-align {
+        &-center {
+            @include flex-align();
+            &-horizontal {
+                @include flexbox();
+                @include justify-content(center);
+            }
+            &-vertical {
+                @include flexbox();
+                @include align-items(center);
+            }
+        }
+        &-start {
+            @include flexbox();
+            @include flex-start();
+        }
+
+        &-end {
+            @include flexbox();
+            @include flex-end();
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@for $i from 1 through 100 {
+    .sw_height-#{$i} {
+      height: $i+px;
+    }
+  }
+  
+  @while $height <= 100 {
+    .sw_ht-#{$height} {
+      height: $height * 1%;
+    }
+    $height: $height + 10;
+  }
+  
+  .sw_ht {
+    height: 200px;
+    &-largest {height: 450px !important;}
+    &-larger {height: 350px !important;}
+    &-large {height: 250px !important;}
+    &-small {height: 150px !important;}
+    &-smaller {height: 100px !important;}
+    &-smallest {height: 50px !important;}
+    &-max {
+      max-height: 200px;
+      &-largest {max-height: 450px;}
+      &-larger {max-height: 350px;}
+      &-large {max-height: 250px;}
+      &-small {max-height: 150px;}
+      &-smaller {max-height: 100px;}
+      &-smallest {max-height: 50px;}
+    }
+  }

@@ -1,0 +1,17 @@
+.sw_pos {
+    &-relative {
+        @include position(relative);
+    }
+    &-absolute {
+        @include position(absolute);
+    }
+    &-fixed {
+        @include position(fixed);
+    }
+    &-static {
+        @include position(static);
+    }
+    &-sticky {
+        @include position(sticky);
+    }
+  }

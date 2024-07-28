@@ -1,0 +1,23 @@
+.font {font-size: $font-normal;}
+
+@for $font-max from 1 through 10 {
+    .font-max-#{$font-max} {
+        @if ($font-max == 1) {
+            font-size: 1.5rem; 
+        } @else {
+            font-size: ($font-max * 1)+$rem; 
+        }
+    }
+}
+
+@for $font-min from 1 through 10 {
+    .font-min-#{$font-min} {
+        @if ($font-min == 10) {
+            font-size: (1 - (calc($font-min / 10))); 
+        } @else {
+            font-size: (1 - (calc($font-min / 10)))+$rem; 
+        }
+    }
+}
+  
+  

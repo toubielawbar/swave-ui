@@ -1,0 +1,144 @@
+.sw {
+    &_wrapper {
+        @include margin-center(); 
+        width: 95%; 
+        padding-left: var(--wrapper-padding);
+        padding-right: var(--wrapper-padding);
+        &-full {
+            @include margin-center(auto); 
+            width: 100%; 
+            padding-left: var(--wrapper-padding);
+            padding-right: var(--wrapper-padding);
+        }
+    }
+    &_clearfix {@include clearfix();}
+    
+    &_close {
+        @include cursor(pointer);
+        @include no-bg();
+        &::after {content: $close-menu; }
+        color: $default-text-color;
+        font-size: $default-font-size;
+        &.sw_round {padding: var(--normal-round-padding);}
+        &-largest {
+            @include default-font-largest();
+            &.sw_round {padding: var(--large-round-padding);}
+        }
+        &-larger {
+            @include default-font-larger();
+            &.sw_round {padding: var(--large-round-padding);}
+        }
+        &-large {
+            @include default-font-large();
+            &.sw_round {padding: var(--large-round-padding);}
+        }
+        &-small {
+            @include default-font-small();
+            &.sw_round {padding: var(--small-round-padding);}
+        }
+        &-smaller {
+            @include default-font-smaller();
+            &.sw_round {padding: var(--smaller-round-padding);}
+        }
+        &-smallest {
+            @include default-font-smallest();
+            &.sw_round {padding: var(--smallest-round-padding);}
+        }
+
+        &[data-close="drawer"], &[data-close="modal"], &[data-close="notification"], &[data-close="panel"], &[data-close="snackbar"], 
+        &[data-close="toast"], &[data-close="sidebar"] {
+            @include align(right);
+            opacity: .7;
+            &:hover, &:focus {opacity: 1;}
+       }
+       &[data-close="snackbar"], &[data-close="toast"] {
+            display: map-get($display_array, inline-block) !important;
+        }
+    }
+
+    &_toggle {
+        @include no-outline();
+        @include no-bg();
+        @include cursor(pointer);
+        &::after {content: $mobile-menu;}
+        &-close {
+            &::after {content: $close-menu;}
+        }
+        &[data-toggle="navbar"], &[data-toggle="drawer"] {
+            @include align(right);
+        }
+     }
+
+    &_round {
+        @include round();
+        &-bg {background-color: $default-bg}
+    }
+    &_hr {
+        @include default-border-direction(top);
+        color: $default-border-color;
+        box-sizing: content-box;
+        height: 0;
+        width: 100%;
+        overflow: visible;
+        margin: .75rem 0;
+    }
+
+    &_blockquote {
+        @include default-border();
+        @include has-border(left, 3px);
+        @include default-font-normal();
+        @include default-padding-large();
+        @include text-style(italic);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        &-footer {
+            display: block;
+            font-size: 80%;
+            color: $default-text-color;
+            &::before {
+                content: $quote-mark;
+            }
+        }
+    }
+
+    &_cluster {
+        @include flexbox();
+        @include flex-wrap(wrap);
+        & > * {
+            margin: .25rem;
+        }
+        &-v {
+           & > * {
+            margin-bottom: .7rem;
+            display: map-get($display_array, block) !important;
+           }
+        }
+    }
+
+    &_active {
+        @include active-state();
+        &-accent {@include active-accent-state();}
+    }
+    &_disabled {@include disabled();}
+
+    &_listing {
+        &-spaced {padding-left: 1.5rem ;}
+        @each $type in $list_array {
+            &-#{$type} {list-style-type: $type !important}
+        }
+    }
+    
+    &_header, &-footer {&-no-outline {@include no-border();}}
+    &_no-resize {resize: none;}
+    &_code {
+        background: none !important;
+        font-size: var(--small-fontsize) !important;
+    }
+}
+
+.st {&_active {@include active-text-state();}}
+.br {&_active {@include active-border-state();}}
+
+
+
+

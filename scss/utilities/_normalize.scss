@@ -1,0 +1,84 @@
+html { 
+    line-height: 1.15; 
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  } 
+
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, figure, ol, ul, li, dl, dd, form, fieldset, legend, input, textarea, button, article, aside, details, figcaption, footer, header, main, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+
+  *,::before,::after {box-sizing: border-box;text-shadow: none;}
+
+  body {
+    @include default-font();
+    color: $default-text-color;
+    background-color: map-get($spectrum_array, white);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  [tab-index="-1"] {
+    &:focus {@include no-outline-border();}
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+  }
+    a, area, button, input, label, select, textarea {-ms-touch-action: manipulation; touch-action: manipulation;}
+    article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {display: map-get($display_array, block);}
+  }
+
+a {
+    text-decoration: none; 
+    -webkit-text-decoration-skip: objects;
+    color: map-get($spectrum_array, cornflower_blue);
+    background-color: transparent; 
+    &:visited {color: map-get($spectrum_array, violet);}
+    &:focus, &:active {
+        color: map-get($spectrum_array, poppy_red);
+    }
+  }
+
+  abrr[title], abbr[data-original-title] {
+    @include cursor(help);
+    @include text-decoration(underline dotted);
+    border-bottom: 0;
+  }
+
+  blockquote, pre, tr, img {page-break-inside: avoid;}
+  h1, h2, h3, h4, h5, h6 {margin-top: 0; margin-bottom: .5rem;}
+  h1, h2, h3, h4, h5, h6, a, span, li {text-shadow: none; font-weight: 400; line-height: 1.2;}
+  h1 {font-size: 2em;}
+  h2 {font-size: 1.5em;}
+  h3 {font-size: 1.15em;}
+  h4 {font-size: .85em;}
+  h5 {font-size: .75em;}
+  h6 {font-size: .65em;}
+  img {vertical-align: middle;border-style: none;}
+  p {margin-top: 0;margin-bottom: 1rem;}
+  ol, ul {@include no-list-style();}
+  label {display: map-get($display_array, inline-block); margin-bottom: .5rem; font-size: 1rem;}
+  textarea {overflow: auto; resize: vertical;}
+  pre, code, kbd, samp {@include default-font();}
+  code {font-size: 85%; color: map-get($spectrum_array, blue_violet); word-wrap: break-word; font-family: Consolas, sans-serif;}
+  pre {display: map-get($display_array, block); font-size: 85%; color: map-get($spectrum_array, midnightblue); padding: .2rem .4rem;}
+  pre code {font-size: inherit; color: inherit; word-break: normal;}
+  sub, sup {vertical-align: baseline; font-size: 80%; line-height: 0; position: relative;}
+  table {
+    caption-side: bottom;
+    border-collapse: collapse;
+  }
+  thead {display: map-get($display_array, table-header-group); vertical-align: bottom;}
+  th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+  }

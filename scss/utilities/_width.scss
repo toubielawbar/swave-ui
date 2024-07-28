@@ -1,0 +1,25 @@
+@while $width <= 100 {
+    .sw_wd-#{$width} {
+        width: $width * 1% !important;
+    }
+    $width: $width + 10;
+ }
+
+ .sw_wd {
+    width: 200px;
+    &-largest {width: 450px !important;}
+    &-larger {width: 350px !important;}
+    &-large {width: 250px !important;}
+    &-small {width: 150px !important;}
+    &-smaller {width: 100px !important;}
+    &-smallest {width: 50px !important;}
+    &-max {
+      max-width: 200px;
+      &-largest {max-width: 450px;}
+      &-larger {max-width: 350px;}
+      &-large {max-width: 250px;}
+      &-small {max-width: 150px;}
+      &-smaller {max-width: 100px;}
+      &-smallest {max-width: 50px;}
+    }
+  }

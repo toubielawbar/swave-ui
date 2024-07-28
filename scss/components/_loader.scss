@@ -1,0 +1,75 @@
+.sw_loader {
+    @include round();
+    display: map-get($display_array, inline-block);
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+
+    &-glow {
+        background-color: $default-color;
+        -webkit-animation: loader_glow .75s linear infinite;
+        animation: loader_glow .75s linear infinite;   
+    }
+    &-border {
+        border: 0.125em solid $default-color;
+        border-right-color: transparent;
+        border-bottom-width: 0;
+        border-left-width: 0;
+        -webkit-animation: loader_border .75s linear infinite;
+        animation: loader_border .75s linear infinite;
+    }
+
+    &-spin {
+        border: 3px solid rgba(0, 0, 0, 0.1);
+        border-left: 3px solid $default-color;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite; 
+    }
+
+    &-large {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    &-larger {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    &-small {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+@keyframes loader_glow {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes loader_border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader_border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

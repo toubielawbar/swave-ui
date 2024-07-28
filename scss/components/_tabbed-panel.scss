@@ -1,0 +1,56 @@
+.sw_tab {
+    @include default-padding-normal();
+    display: map-get($display_array, inline-block) !important;
+    background-color: $default-clear-bg;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    &-nav {
+        @include flexbox();
+        @include default-border-direction(bottom);
+    }
+    &-menu {
+        padding: var(--tab-menu-padding);
+    }
+    &-link {
+        @include default-font-small();
+        padding: var(--normal-padding);
+        margin: 0;
+        background-color: transparent;
+        line-height: 1.5;
+        transition: 0.35s ease-in;
+        &.sw_disabled {background-color: transparent !important;}
+    }
+
+    &-vertical {
+        & .sw_tab-nav {
+            @include default-single-border(right);
+            padding: 0 !important;
+            display: block !important;
+            height: 100%;
+            float: left;
+            margin-right: 20px;
+        }
+
+        &>.sw_tab-wrapper {padding-top: 0 !important;}
+        
+    }
+
+    &-wrapper {
+        padding: var(--tab-wrapper-padding);
+        min-height: 8rem;
+    }
+    &-content {
+        @include no-display();
+        transition: color 0.15s ease-in;
+
+        &.tab-content-active {
+            @include transition(opacity, .7, ease-in);
+            display: block;
+        }
+    }
+
+    
+    &-styled {@include styled();}
+    &-outline {@include outlined();}
+}

@@ -1,0 +1,22 @@
+.sw_hero {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &-full {height: 90vh;}
+    &-max {height: 60vh;}
+    &-mid {height: 45vh;}
+    &-min {height: 30vh;}
+    &-content {
+        height: 100%;
+        &-row {
+            @include flex-align();
+            @include justify-content(space-between);
+
+            & > .page-content-left, & > .page-content-right {@include default-padding-normal();}
+        }
+        &-center {
+            @include flex-center();
+        }
+    }
+}

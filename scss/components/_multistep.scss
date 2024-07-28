@@ -1,0 +1,75 @@
+.sw_multistep {
+    @include flexbox();
+    gap: 1.5rem;
+    width: 100%;
+    
+    &-item {
+        @include flex-align();
+        @include flex-direction(row);
+        width: 100%;
+        gap: 0.5rem;
+        white-space: nowrap;
+        &:not(:last-child) {
+            &:after {
+                @include default-border-direction(bottom);
+                content: '';
+                flex: 1 1 0;
+                height: 1px;
+                min-height: 0;
+                min-width: 1rem;
+                position: relative;
+                width: 100%;
+            }
+        }
+        &-icon {
+            @include flexbox();
+            @include flex-center();
+            @include round();
+            @include default-font-small();
+            background-color: $default-bg;
+            color: $default-text-color;
+            min-height: 2rem;
+            min-width: 2rem;
+            & > * {@include default-font-small();}
+        }
+        &-text {
+            @include default-font-small();
+            margin-bottom: 0; 
+        }
+
+        &.step-active {
+            & .sw_multistep-item-icon {@include active-state();}
+            & .sw_multistep-item-text {@include active-text-state();}
+            &:after {@include active-border-state();}
+        }
+
+    }
+
+    &-vertical {
+        @include flex-align();
+        @include flex-direction(column);
+        @include fit-width-content();
+        gap: 0.5rem;
+
+        & > .sw_multistep-item {
+            @include flex-align();
+            @include flex-direction(column);
+            @include fit-width-content();
+            gap: 0.5rem;
+
+            &:not(:last-child) {
+                &:after {
+                    @include default-border-direction(left);
+                    content: '';
+                    flex: 1 1 0;
+                    height: 100%;
+                    min-height: 2rem;
+                    min-width: 0;
+                    position: relative;
+                    width: 1px;
+                }
+            }
+        }
+    }
+    
+}

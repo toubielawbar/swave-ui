@@ -1,0 +1,118 @@
+.sw_accordion {
+    &-details {
+        background-color: $default-bg;
+        margin-bottom: -1px !important;
+
+        &[open] {
+            .sw_accordion-wrapper {
+                @include animation(sweep, .5)
+            }
+        }
+        @include animation(sweep, .5)
+    }
+
+    &[data-control=true] {
+        & .sw_accordion-toggler {
+            &::after {
+                @include transition(all, 0.3, ease);
+                @include align(right);
+                @include default-font-large();
+                content: $plus;
+            }
+        }
+            & .sw_accordion-details[open] {
+                & .sw_accordion-toggler::after {
+                    @include transform(rotateZ, 45deg);
+                }
+                
+            }
+    }
+
+    &-wrapper {
+        @include default-padding-normal();
+        & > * {font-size: var(--normal-fontsize);}
+    }
+    &-toggler {
+        @include cursor(pointer);
+        @include no-list-style();
+        @include transition(background-color, .3, ease);
+        @include default-padding-normal();
+        @include default-font-normal();
+        width: 100%;
+        
+        &::-webkit-details-marker {
+            @include no-display();
+        }
+    }
+
+    &-outline {
+        .sw_accordion-details {
+            @include outlined();
+        }
+    }
+    &.panel-border {
+        & {
+            .sw_accordion-wrapper {
+                @include default-border-direction(top);
+            }
+        }
+    }
+
+    &.panel-collapse {
+        & {
+            .sw_accordion-details {
+                @include collapse();
+            }
+        }
+    }
+}
+
+
+@each $spectrum, $spectrum_value in $spectrum_array {
+    .sw_accordion.bg-#{"" + $spectrum} { 
+        & {
+            .sw_accordion-details {
+                background-color: $spectrum_value;
+            }
+        }
+        
+    }
+    .sw_accordion.br-#{"" + $spectrum} {
+        &.panel_border {
+            & {
+                .sw_accordion-wrapper {
+                    border-color: $spectrum_value !important;
+                }
+            }
+        }
+        & {
+            .sw_accordion-details {
+                border-color: $spectrum_value !important;
+            }
+        }
+        
+    }
+    .sw_accordion.st-#{"" + $spectrum} {
+        & {
+            .sw_accordion-details {
+                color: $spectrum_value !important;
+            }
+        }
+    }
+}
+
+@for $rsq from 1 through 8 {
+    .sw_accordion.sw_rsq-#{$rsq} {
+        border-radius: calc($rsq / 4) * 1rem;
+      & {
+        .sw_accordion-details {
+          &:first-child {
+            border-radius: calc($rsq / 4) * 1rem calc($rsq / 4) * 1rem 0 0;
+          }
+          &:last-child {
+            border-radius: 0 0 calc($rsq / 4) * 1rem calc($rsq / 4) * 1rem;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,88 @@
+.sw_panel {
+    @include flexbox();
+    @include flex-direction(column);
+    @include border-with-color(transparent);
+    background-color: $default-bg;
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    word-wrap: break-word;
+    background-clip: border-box;
+
+    &-wrapper {
+        @include auto-flex(1);
+        padding: 1.5rem;
+        &>p, &>h1, &>h2, &>h3, &>h4, &>h5, &>h6 {
+            margin-bottom: 0;
+        }
+    }
+   
+    &-outline {@include outlined();}
+
+    &-title {margin-bottom: .5rem; }
+
+    &-subtitle {
+        font-size: var(--normal-fontsize);
+        color: map-get($spectrum_array, mute);
+        margin-bottom: .75rem !important;
+    }
+
+    &-header, &-footer {
+        background-color: $default-bg;
+        padding: 1rem;
+        margin: 0;
+        &>p, &>h1, &>h2, &>h3, &>h4, &>h5, &>h6 {
+            margin-bottom: 0;
+        }
+    }
+
+    &-header {@include default-border-direction(bottom);}
+    &-footer {@include default-border-direction(top);}
+    &-styled {@include styled-fit();}
+
+    &-overlay {
+        @include no-position();
+        @include default-padding-larger();
+        position: absolute;
+    }
+
+    & > .sw_grid-row > .sw_grid { margin-bottom: 0 !important;}
+
+    @for $rsq from 1 through 8 {
+        &.sw_rsq-#{$rsq} {
+            & .sw_panel-header {
+                border-radius: calc($rsq / 4) + $rem calc($rsq / 4) + $rem 0 0;
+            }
+
+            & .sw_panel-footer {
+                border-radius: 0 0 calc($rsq / 4) + $rem calc($rsq / 4) + $rem;
+            }
+
+            & .sw_img-top {
+                $rs: calc($rsq / 4) + $rem;
+                border-radius: calc($rs + 1px) calc($rs + 1px) 0 0;
+            }
+
+            & .sw_img-bottom {
+                $rs: calc($rsq / 4) + $rem;
+                border-radius: 0 0 calc($rs + 1px) calc($rs + 1px);
+            }
+
+            & .sw_img-left {
+                $rs: calc($rsq / 4) + $rem;
+                border-radius: calc($rs + 1px) 0 0 calc($rs + 1px);
+            }
+
+            & .sw_img-right {
+                $rs: calc($rsq / 4) + $rem;
+                border-radius: 0 calc($rs + 1px) calc($rs + 1px) 0;
+            }
+
+            & img {
+                $rs: calc($rsq / 4) + $rem;
+                border-radius: calc($rs + 1px);
+            }
+        }
+    }
+
+}

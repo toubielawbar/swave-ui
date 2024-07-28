@@ -1,0 +1,12 @@
+.sw_square {
+    &-25 {@include square(25px);}
+    &-32 {@include square(32px);}
+    &-40 {@include square(40px);}
+    &-50 {@include square(50px);}
+    &-80 {@include square(80px);}
+    &-100 {@include square(100px);}
+    &-150 {@include square(150px);}
+    &-200 {@include square(200px);}
+    &-250 {@include square(250px);}
+    &-500 {@include square(500px);}
+}

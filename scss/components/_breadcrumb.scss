@@ -1,0 +1,103 @@
+.sw_breadcrumb {
+    @include default-padding-normal();
+
+    @include border-with-color(transparent);
+    background-color: $default-bg;
+    font-size: var(--normal-fontsize);
+    margin-bottom: 1rem; 
+
+    &-menu {
+        display: map-get($display_array, inline);
+        &:not(.sw_breadcrumb-link) {
+            color: $default-text-color-mute;
+        }
+    }
+
+    &-link {
+        &:after {
+            content: $default-separator;
+            color: map-get($spectrum_array, mute);
+            display:  map-get($display_array, inline-block);
+            margin: 0 .5rem;
+        }
+    }
+
+    &.arrow_separator {
+        .sw_breadcrumb-link {
+            &::after {
+                content: $arrow-separator;
+            }
+        }
+    }
+
+    &.dot_separator {
+        .sw_breadcrumb-link {
+            &::after {
+                content: $dot-separator;
+            }
+        }
+    }
+
+    &.angle_separator {
+        .sw_breadcrumb-link {
+            &::after {
+                content: $angle-separator;
+            }
+        }
+    }
+
+    &-center {
+        @include text-align(center);
+    }
+
+    &-right {
+        @include text-align(right);
+    }
+
+    &-outline {
+        @include outlined();
+    }
+
+    &-styled {
+        @include styled-fit();
+    }
+
+    &-largest {
+        &>ul>li, &>ul>li>a {
+            font-size: var(--largest-fontsize);
+           }
+    }
+
+    &-larger {
+        &>ul>li, &>ul>li>a {
+            font-size: var(--larger-fontsize);
+           }
+    }
+
+    &-large {
+        &>ul>li, &>ul>li>a {
+            font-size: var(--large-fontsize);
+           }
+    }
+
+    &-small {
+        &>ul>li, &>ul>li>a {
+            font-size: var(--small-fontsize);
+       }
+    }
+
+    &-smaller {
+        &>ul>li, &>ul>li>a {
+            @include default-padding-smaller();
+            font-size: var(--smaller-fontsize);
+       }
+    }
+    
+    &-smallest {
+        &>ul>li, &>ul>li>a {
+            @include default-padding-smallest();
+            font-size: var(--smallest-fontsize);
+       }
+    }
+    
+}

@@ -1,0 +1,39 @@
+.sw_totop {
+    @include default-font-normal();
+    @include no-display();
+    @include text-align(center);
+    @include square(40px);
+    background-color: $default-bg;
+    z-index: $zindex-totop;
+    position: fixed;
+    line-height: 1.25;
+    bottom: 15px;
+    transition: background 0.5s;
+
+    & {
+        i {
+            margin-top: .8rem;
+        }
+    }
+
+    &-left {
+        left: 15px;
+    }
+
+    &-right {
+        right: 15px;
+    }
+
+    &-round {@include round();}
+
+    &-blobup {
+        border-top-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+
+    &-blobdown {
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+    &-styled {@include styled_fit();}
+}

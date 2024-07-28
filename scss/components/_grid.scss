@@ -1,0 +1,51 @@
+.sw_grid {
+    position: relative;
+    width: 100%;
+    min-height: 1px; 
+    padding: 0 10px;
+    margin-bottom: 1rem;
+    &-compact {padding: 0;}
+    
+    &-row { 
+        @include flexbox();
+        @include flex-wrap(wrap);
+        margin: 0 -10px;
+    }
+    &-column {
+        @include flex-grow(1);
+        flex-basis: 0;
+        max-width: 100%;
+    }
+    &-auto {
+        @include auto-flex(0);
+        width: auto;
+        max-width: none;
+    }
+    &-segment {
+        display: map-get($display_array, grid);
+        grid-gap: 10px; 
+        &-column {
+            padding: .75rem;
+        }
+    }
+
+    
+    @each $size, $size_value in $grid_array {
+        &-#{$size} { 
+            @include grid-flex($size_value);
+        }
+    }
+}
+
+@for $i from 1 through 10 {
+    .segment-#{$i} {
+      $fr_values: '';
+      @for $j from 1 through $i {
+        $fr_values: #{$fr_values} 1fr;
+        @if $j < $i {
+          $fr_values: #{$fr_values} 10px; 
+        }
+      }
+      grid-template-columns: $fr_values;
+    }
+  }

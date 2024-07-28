@@ -1,0 +1,221 @@
+.sw_btn {
+    @include button();
+    @include border-with-color(transparent);
+    @include user-select(); 
+    background-color: $default-bg;
+    font-size: var(--normal-fontsize);
+    padding: var(--normal-padding);
+    vertical-align: middle;
+    opacity: 0.9;
+    @include transition(all, .4, ease-in-out);
+
+    &-block {width: 100%;}
+
+    &:disabled {@include disabled();}
+    &:focus, &:hover {
+        background-color: darken(map-get($spectrum_array, $default-bg), 10%);
+        opacity: 1;
+    }
+
+    &-ghost {
+        background-color: transparent;
+        opacity: 1;
+            &:hover {
+                background-color: $default-bg !important;
+        }
+    }
+    
+    &-largest {
+        padding: var(--largest-padding);
+        font-size: var(--largest-fontsize);
+    }
+
+    &-larger {
+        padding: var(--larger-padding);
+        font-size: var(--larger-fontsize);
+    }
+
+    &-large {
+        padding: var(--large-padding);
+        font-size: var(--large-fontsize);
+    }
+
+    &-small {
+        padding: var(--small-padding);
+        font-size: var(--small-fontsize);
+    }
+
+    &-smaller {
+        padding: var(--smaller-padding);
+        font-size: var(--smaller-fontsize);
+    }
+
+    &-smallest {
+        padding: var(--smallest-padding);
+        font-size: var(--smallest-fontsize);
+    }
+
+    &-outline {
+        @include default-border();
+        @include no-bg();
+    }
+
+    &-styled {
+        @include styled-fit();
+    }
+
+    &-group {
+        @include inline-flex();
+        position: relative;
+        vertical-align: middle;
+
+        & > button {
+            &:hover {
+                background-color: darken(map-get($spectrum_array, $default-bg), 10%);
+            }
+        }
+
+        &-full {
+            @include flexbox();
+            @include justify-content(space-between);
+            & > button {flex: 1}
+        }
+
+        &-largest {
+            & > button, & > .sw_btn {
+                padding: var(--largest-padding);
+                font-size: var(--largest-fontsize);
+            }
+        }
+    
+        &-larger {
+            & > button, & > .sw_btn {
+                padding: var(--larger-padding);
+                font-size: var(--larger-fontsize);
+            }
+        }
+    
+        &-large {
+            & > button, & > .sw_btn {
+                padding: var(--large-padding);
+                font-size: var(--large-fontsize);
+            }
+        }
+    
+        &-small {
+            & > button, & > .sw_btn {
+                padding: var(--small-padding);
+                font-size: var(--small-fontsize);
+            }
+        }
+    
+        &-smaller {
+            & > button, & > .sw_btn {
+                padding: var(--smaller-padding);
+                font-size: var(--smaller-fontsize);
+            }
+        }
+    
+        &-smallest {
+            & > button, & > .sw_btn {
+                padding: var(--smallest-padding);
+                font-size: var(--smallest-fontsize);
+            }
+        }
+
+        &-outline {
+            & > button {
+                @include default-border();
+                @include no-bg();
+                margin-right: -1px;
+                &:last-child {margin-right: 0;}
+            }
+        }
+
+        &-v {
+            @include flex-column();
+            & > button, & > .sw_btn, & > a {
+                position: relative;
+                -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+                margin-bottom: 0;
+                width: 100%;
+            }
+
+            &-outline {
+                & > button {
+                    @include outlined();
+                    margin-bottom: -1px !important;
+                    &:last-child {margin-bottom: 0;}
+                }
+            }
+
+            & {
+                .sw_dropdown-content {
+                    margin-top: 22.5rem !important;
+                }
+            }
+
+        }
+        & {
+            .sw_dropdown-content {
+                margin-top: 3.2rem !important;
+            }
+        }
+
+    }
+    &-split {
+        & > .split-item {
+            @include default-border-direction(left)
+        }
+    }
+}
+
+@for $rsq from 1 through 8 {
+    .sw_btn-group.sw_rsq-#{$rsq} {
+        & button {
+            &:first-child {
+                @include border-with-color(map-get($static_spectrum_array, inherit));
+                 border-radius: calc($rsq / 4) * 1rem 0 0 calc($rsq / 4) * 1rem;
+               }
+
+             
+               &:last-child {
+                 @include border-with-color(map-get($static_spectrum_array, inherit));
+                 border-radius: 0 calc($rsq / 4) * 1rem calc($rsq / 4) * 1rem  0;
+                 
+               }
+        }
+    }
+
+    .sw_btn-split.sw_rsq-#{$rsq} {
+        & button {
+            &:first-child {
+                @include border-with-color(map-get($static_spectrum_array, inherit));
+                 border-radius: calc($rsq / 4) * 1rem 0 0 calc($rsq / 4) * 1rem;
+               }
+
+               &:nth-child(2) {
+                @include border-with-color(map-get($static_spectrum_array, inherit));
+                border-radius: 0 calc($rsq / 4) * 1rem calc($rsq / 4) * 1rem  0;
+               }
+     
+               
+        }
+    }
+
+    .sw_btn-group-v.sw_rsq-#{$rsq} {
+        & button {
+            &:first-child {
+                @include border-with-color(map-get($static_spectrum_array, inherit));
+                 border-radius: calc($rsq / 4) * 1rem calc($rsq / 4) * 1rem 0 0;
+               }
+     
+               &:last-child {
+                 @include border-with-color(map-get($static_spectrum_array, inherit));
+                 border-radius: 0 0 calc($rsq / 4) * 1rem calc($rsq / 4) * 1rem;
+                 
+               }
+        }
+    }
+}

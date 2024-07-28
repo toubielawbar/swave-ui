@@ -1,0 +1,36 @@
+.sw_topnav {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+    @include default-padding-normal();
+    @include transition(all, .8, ease-in-out);
+    background-color: $default_bg; 
+    z-index: $zindex-navbar !important;
+    position: relative;
+
+    &-left { 
+        &-menu {
+            display: map-get($display_array, inline-block);
+            & > .sw_topnav-menu {display: map-get($display_array, inline-block);}
+        }
+    }
+
+    &-brand, &-menu {
+        display: map-get($display_array, inline-block);
+    }
+ 
+    &-menu:not(.sw_btn) {padding: var(--navbar-menu-padding);}
+
+    &-link {
+        font-size: var(--normal-fontsize);
+        &.sw_btn {margin-bottom: 0 !important;}
+    }
+
+    &-fixed {
+        @include fixed-top();
+        &+div, &+section, &+article, &+main, &+form, &+ul, &+a, &+button, &+h1, &+h2, &+h3, &+h4, &+h5, &+h6, &+p {margin-top: 5.5rem;}
+    }
+
+    &-styled {@include styled-fit();}
+}

@@ -1,0 +1,52 @@
+.sw_notification {
+    font-size: var(--normal-fontsize);
+    padding: var(--normal-padding);
+    @include border-with-color(transparent);
+    @include mini-transition(.8);
+    background-color: $default-bg;
+    position: relative;
+    margin-bottom: 1rem;
+    &>p, &>h1, &>h2, &>h3, &>h4, &>h5, &>h6 {
+        margin-bottom: 0 !important;
+    }
+    &>span, &>p, &>ul>li {font-size: var(--normal-fontsize);}
+    
+    &-outline {@include outlined();}
+ 
+    &.has-border-left {@include has-border(left, 2px);}
+    &.has-border-right {@include has-border(right, 2px);}
+    &.has-border-top {@include has-border(top, 2px);}
+    &.has-border-bottom {@include has-border(bottom, 2px);}
+
+    &-styled {@include styled();}
+
+    &-largest {
+        padding: var(--largest-padding);
+        font-size: var(--largest-fontsize);
+    }
+
+    &-larger {
+        padding: var(--larger-padding);
+        font-size: var(--larger-fontsize);
+    }
+
+    &-large {
+        padding: var(--large-padding);
+        font-size: var(--large-fontsize);
+    }
+
+    &-small {
+        padding: var(--small-padding);
+        font-size: var(--small-fontsize);
+    }
+
+    &-smaller {
+        padding: var(--smaller-padding);
+        font-size: var(--smaller-fontsize);
+    }
+
+    &-smallest {
+        padding: var(--smallest-padding);
+        font-size: var(--smallest-fontsize);
+    }
+}

@@ -1,0 +1,13 @@
+$default-font-family: 'Arial', sans-serif;
+$default-font-size: 16px;
+$default-font-weight: 400;
+$default-line-height: 1.5; 
+
+$default-separator: '\002F';
+
+$default-border-color: map-get($spectrum_array, gainsboro);
+$default-text-color: map-get($spectrum_array, charcoal);
+$default-text-color-mute: map-get($spectrum_array, mute);
+$default-bg: map-get($spectrum_array, whitesmoke);
+$default-clear-bg: map-get($spectrum_array, white);
+$default-color: map-get($spectrum_array, amber);

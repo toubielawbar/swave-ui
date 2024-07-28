@@ -1,0 +1,113 @@
+@each $spectrum, $spectrum_value in $spectrum_array {
+    .bg-#{"" + $spectrum} { 
+      background-color: $spectrum_value !important;
+    }
+    .br-#{"" + $spectrum} {
+      border-color: $spectrum_value !important;
+    }
+    .brl-#{"" + $spectrum} {
+      border-left-color: $spectrum_value !important;
+    }
+
+    .brr-#{"" + $spectrum} {
+      border-right-color: $spectrum_value !important;
+    }
+
+    .brt-#{"" + $spectrum} {
+      border-top-color: $spectrum_value !important;
+    }
+
+    .brb-#{"" + $spectrum} {
+      border-bottom-color: $spectrum_value !important;
+    }
+
+    .brlr-#{"" + $spectrum} {
+      border-left-color: $spectrum_value !important;
+      border-right-color: $spectrum_value !important;
+    }
+
+    .brtb-#{"" + $spectrum} {
+      border-top-color: $spectrum_value !important;
+      border-bottom-color: $spectrum_value !important;
+    }
+
+    .st-#{"" + $spectrum} {
+      color: $spectrum_value !important;
+    }
+  }
+
+  @each $lighter_spectrum, $lighter_spectrum_value in $spectrum_array {
+    .bg-#{"" + $lighter-spectrum}-light {
+      background-color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+    .br-#{"" + $lighter-spectrum}-light {
+      border-color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+    .brl-#{"" + $lighter-spectrum}-light {
+      border-left-color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+  
+    .brr-#{"" + $lighter-spectrum}-light {
+      border-right-color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+  
+    .brt-#{"" + $lighter-spectrum}-light {
+      border-top-color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+  
+    .brb-#{"" + $lighter-spectrum}-light {
+      border-bottom-color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+  
+    .brlr-#{"" + $lighter-spectrum}-light {
+      border-left-color: rgba($lighter_spectrum_value, 0.1) !important;
+      border-right-color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+  
+    .brtb-#{"" + $lighter-spectrum}-light {
+      border-top-color: rgba($lighter_spectrum_value, 0.1)!important;
+      border-bottom-color: $lighter_spectrum_value !important;
+    }
+  
+    .st-#{"" + $lighter-spectrum}-light {
+      color: rgba($lighter_spectrum_value, 0.1) !important;
+    }
+  }
+
+  @each $darker_spectrum, $darker_spectrum_value in $spectrum_array {
+    .bg-#{"" + $darker-spectrum}-dark {
+      background-color: darken($darker_spectrum_value, 10%) !important;
+    }
+    .br-#{"" + $darker-spectrum}-dark {
+      border-color: darken($darker_spectrum_value, 10%) !important;
+    }
+    .brl-#{"" + $darker-spectrum}-dark {
+      border-left-color: darken($darker_spectrum_value, 10%) !important;
+    }
+
+    .brr-#{"" + $darker-spectrum}-dark {
+      border-right-color: darken($darker_spectrum_value, 10%) !important;
+    }
+
+    .brt-#{"" + $darker-spectrum}-dark {
+      border-top-color: $darker_spectrum_value !important;
+    }
+
+    .brb-#{"" + $darker-spectrum}-dark {
+      border-bottom-color: $darker_spectrum_value !important;
+    }
+
+    .brlr-#{"" + $darker-spectrum}-dark {
+      border-left-color: darken($darker_spectrum_value, 10%) !important;
+      border-right-color: darken($darker_spectrum_value, 10%) !important;
+    }
+
+    .brtb-#{"" + $darker-spectrum}-dark {
+      border-top-color: darken($darker_spectrum_value, 10%) !important;
+      border-bottom-color: darken($darker_spectrum_value, 10%) !important;
+    }
+
+    .st-#{"" + $darker-spectrum}-dark {
+      color: darken($darker_spectrum_value, 10%) !important;
+    }
+  }

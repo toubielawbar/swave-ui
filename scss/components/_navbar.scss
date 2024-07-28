@@ -1,0 +1,82 @@
+.sw_navbar {
+    
+    @include default-padding-normal();
+    @include transition(all, .8, ease-in-out);
+    background-color: $default_bg; 
+    z-index: $zindex-navbar !important;
+    position: relative;
+    
+    &-left { 
+        &-menu {
+            display: map-get($display_array, inline-block);
+            & > .sw_navbar-menu {display: map-get($display_array, inline-block);}
+        }
+    }
+    &-left, &-center, &-right {
+        & > form, & > form > input, & > form > select {@include flexbox();}
+    }
+    
+
+    &-link {
+        font-size: var(--normal-fontsize);
+        &.sw_btn {margin-bottom: 0 !important;}
+    }
+
+ 
+    &-styled {@include styled-fit();}
+
+    &-hero {
+        z-index: $zindex-hero;
+        position: absolute;
+        width: 100%;
+        &-fixed {
+            @include fixed-top();
+        }
+    }
+
+    &-fixed {
+        @include fixed-top();
+        &+div, &+section, &+article, &+main, &+form, &+ul, &+a, &+button, &+h1, &+h2, &+h3, &+h4, &+h5, &+h6, &+p {margin-top: 5.5rem;}
+    }
+
+    &-sticky {
+        @include sticky();
+        z-index: $zindex-sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+
+    &-largest {
+        @include default-padding-largest();
+        & .sw_navbar-link, & .sw_toggle {font-size: var(--largest-fontsize);}
+    }
+
+    &-larger {
+        @include default-padding-larger();
+        & .sw_navbar-link, & .sw_toggle {font-size: var(--larger-fontsize);}
+    }
+
+    &-large {
+        @include default-padding-large();
+        & .sw_navbar-link, & .sw_toggle {font-size: var(--large-fontsize);}
+    }
+
+    &-small {
+        @include default-padding-small();
+        & .sw_navbar-link, & .sw_toggle {@include default-font-small();}
+    }
+
+    &-smaller {
+        @include default-padding-smaller();
+        & .sw_navbar-link, & .sw_toggle {font-size: var(--smaller-fontsize);}
+    }
+
+    &-smallest {
+        @include default-padding-smallest();
+        & .sw_navbar-link, & .sw_toggle {font-size: var(--smallest-fontsize);}
+    }
+    
+}

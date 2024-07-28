@@ -1,0 +1,81 @@
+.sw_img {
+    max-width: 100%; 
+    height: auto;
+
+    &-thumbnail {
+        @include default-border();
+        @include transition(all, .2, ease-in-out);
+        padding: .25rem; 
+        background-color: $default-clear-bg; 
+    }
+
+    &-caption {
+        display: map-get($display_array, block); 
+        color: map-get($spectrum_array, mute);
+        font-size: 85%;
+    }
+
+    &-fit {
+        @each $fit, $fit_value in $fit_array {
+            &-#{$fit} {
+                @include img-fit($fit_value);
+            }
+        } 
+    }
+
+    &-overlay {
+        @include flexbox();
+        @include flex-center();
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+
+    }
+
+    &-filter {
+        @each $filter, $filter_value in $filter-array {
+            &-#{"" + $filter} {
+                @include filter($filter_value);
+            }
+        }
+    }
+
+    &-mask {
+        -webkit-mask-image: none;
+        mask-image: linear-gradient(map-get($spectrum_array, black), transparent);
+    }
+
+    &-styled {
+        @include styled();
+    }
+}
+
+.sw_avatar {
+    @include square(50px);
+    @include img-fit(cover);
+    vertical-align: middle;
+    &-largest {@include square(200px);}
+    &-larger {@include square(150px);}
+    &-large {@include square(100px);}
+    &-small {@include square(40px);}
+    &-smaller {@include square(32px);}
+    &-smallest {@include square(25px);}
+
+    &-placeholder {
+        //@include inline-flex();
+        @include flex-center();
+        background-color: $default-bg; 
+        & > * {
+            line-height: 1.5;
+            vertical-align: middle;
+        }
+    }
+    &-cluster {
+        & > .sw_avatar:not(:first-child) {
+            margin-left: -25px;
+        }
+    }
+}

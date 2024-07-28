@@ -1,0 +1,102 @@
+@for $padding from 0 to 31 {
+
+    @if ($padding == 0) {
+        .sw_pd-#{$padding} {
+            padding: calc($padding / 4) !important;
+        }
+    } @else {
+        .sw_pd-#{$padding} {
+            padding: calc($padding / 4) + $rem !important;
+        }
+    }
+}
+
+@for $padding_top from 0 to 31 {
+
+    @if ($padding_top == 0) {
+        .sw_pt-#{$padding_top} {
+            padding-top: calc($padding_top / 4) !important;
+        }
+    } @else {
+        .sw_pt-#{$padding_top} {
+            padding-top: calc($padding_top / 4) + rem !important;
+        }
+    }
+
+    
+}
+
+@for $padding_bottom from 0 to 31 {
+
+    @if ($padding_bottom == 0) {
+        .sw_pb-#{$padding_bottom} {
+            padding-bottom: calc($padding_bottom / 4) !important;
+        }
+    } @else {
+        .sw_pb-#{$padding_bottom} {
+            padding-bottom: calc($padding_bottom / 4) + rem !important;
+        }
+    }
+
+    
+}
+
+@for $padding_right from 0 to 31 {
+
+    @if ($padding_right == 0) {
+        .sw_pr-#{$padding_right} {
+            padding-right: calc($padding_right / 4) !important;
+        }
+    } @else {
+        .sw_pr-#{$padding_right} {
+            padding-right: calc($padding_right / 4) + rem !important;
+        }
+    }
+
+    
+}
+
+@for $padding_left from 0 to 31 {
+
+    @if ($padding_left == 0) {
+        .sw_pl-#{$padding_left} {
+            padding-left: calc($padding_left / 4)  !important;
+        }
+    } @else {
+        .sw_pl-#{$padding_left} {
+            padding-left: calc($padding_left / 4) + rem !important;
+        }
+    }
+
+}
+
+@for $padding_top_bottom from 0 to 31 {
+
+    @if ($padding_top_bottom == 0) {
+        .sw_ptb-#{$padding_top_bottom} {
+            padding-top: calc($padding_top_bottom / 4) !important;
+            padding-bottom: calc($padding_top_bottom / 4) !important;
+        }
+    } @else {
+        .sw_ptb-#{$padding_top_bottom} {
+            padding-top: calc($padding_top_bottom / 4) + rem !important;
+            padding-bottom: calc($padding_top_bottom / 4) + rem !important;
+        }
+    }
+}
+
+@for $padding_left_right from 0 to 31 {
+
+    @if ($padding_left_right == 0) {
+        .sw_plr-#{$padding_left_right} {
+            padding-left: calc($padding_left_right / 4) !important;
+            padding-right: calc($padding_left_right / 4) !important;
+        }
+    } @else {
+        .sw_plr-#{$padding_left_right} {
+            padding-left: calc($padding_left_right / 4) + rem !important;
+            padding-right: calc($padding_left_right / 4) + rem !important;
+        }
+    }
+
+}

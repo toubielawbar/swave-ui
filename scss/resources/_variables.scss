@@ -1,0 +1,292 @@
+$rem: rem;
+$font-normal: 1rem;
+$left: 10;
+$right: 10;
+$top: 10;
+$bottom: 10;
+$height: 10;
+$width: 10;
+
+$spectrum_array: (
+    alice_blue: #F0F8FF,
+    amber:#FFBF00,
+    amber_brown: #A76646,
+    amber_gold: #C19552,
+    amber_gray: #D0A592,
+    amber_red: #CC310E,
+    antique_white: #FAEBD7,
+    aquamarine: #7FFFD4,
+    army_green: #4B5320,
+    autumn_orange: #EFA311,
+    avocado_green: #B2C248,
+    azure: #F0FFFF,
+    baby_blue: #89CFF0,
+    beige: #F5F5DC,
+    bisque: #FFE4C4,
+    black: #000000,
+    blanched_almond: #FFEBCD,
+    blue: #0000FF,
+    blue_purple: #251858,
+    blue_violet: #8A2BE2,
+    brandy_rose: #A67F78,
+    brick_red: #91412F,
+    brown: #964B00,
+    burgundy: #800020,
+    burlywood: #DEB887,
+    cadet_blue: #5F9EA0,
+    canary_yellow: #FFFF8F,
+    celery: #9DCE5C,
+    chalk: #E0DBD1,
+    charcoal: #36454F,
+    chartreuse: #7FFF00,
+    chestnut: #69491A,
+    chocolate: #7B3F00,
+    coral: #FF7F50,
+    cornflower_blue: #6495ED,
+    cornsilk: #FFF8DC,
+    crimson: #990000,
+    cyan: #00FFFF,
+    dark_salmon: #ED9A76,
+    dark_seagreen: #006400,
+    dark_slategray: #2F4F4F,
+    denim: #282d4d,
+    dodgerblue: #005A9C,
+    dusk_blue: #2A6078,
+    eminence: #632A7E,
+    equator: #E4B660,
+    error: #DC3545,
+    faded_pink: #FFCCCC,
+    gainsboro: #DCDCDC,
+    ghost_green: #A9B28B,
+    gold: #FFD700,
+    goldenrod: #DAA520,
+    golden_amber: #E8BE14,
+    golden_yellow: #FFDF00,
+    gorse: #FFE135,
+    green: #006400,
+    grandis: #FCCA74,
+    gray: 	#808080,
+    gulf_blue: #32435F,
+    honey: #F2AB39,
+    honeydew: #F0FFF0,
+    hotpink: #FF69B4,
+    hurricane: #8F8681,
+    indigo: #4B0082,
+    info: #0DCAF0, 
+    ivory: #FFFFF0,
+    jagged_ice: #D1DDDB,
+    kaitoke: #003E19,
+    khaki:#F0E68C,
+    laughing_orange: #F39C07,
+    lavender: #E6E6FA,
+    lavender_blush: #FFE5F2,
+    light_green: #99CC99,
+    light_mint: #7BC5AE,
+    lime: #32CD32,
+    lochmara: #0072BB,
+    magenta: #FF00FF,
+    marigold: #EAA221,
+    maroon: #800000,
+    mauve: #E0B0FF,
+    midnightblue: #191970,
+    mint: #3EB489,
+    mushroom: #E1DCD9,
+    mustard: #FFDB58,
+    mute: #868E96,
+    navy: #000080,
+    none: transparent,
+    observatory: #028C6A,
+    ocean_dream: #D1EDE1,
+    olive: #808000,
+    orange: #FF6600,
+    orchid: #DA70D6,
+    peach: #FFE5B4,
+    peach_amber: #FB9F93,
+    pewter: #E4E4E4,
+    pink: #FFC0CB,
+    plum: #673147,
+    poppy_red: #DC343B,
+    prussian_blue: #003366,
+    purple:	#A020F0,
+    red: #FF0000,
+    rose: #FF007F,
+    ruby: #E0115F,
+    saddle_brown: #8B4513,
+    salmon: #FA8072,
+    seagull: #85B8CB,
+    seashell: #FFF5EE,
+    sea_green: #2E8B57, 
+    sienna: #A0522D,
+    silver:	#C0C0C0,
+    sky_blue: #87CEEB,
+    snow: #FFFAFA,
+    stack: #8D918D,
+    success: #28A745,
+    tan: #D2B48C,
+    taupe: #483C32,
+    teal: #008080,
+    thistle: #D8BFD8,
+    tomato: #FF6347,
+    turquoise: #30D5C8,
+    violet: #8F00FF,
+    vivid_pink: #ED186B,
+    walnut: #773F1A,
+    warning: #FFC107,
+    wheat: #F5DEB3,
+    whiskey: #CD8F65,
+    white: #FFFFFF,
+    whitesmoke: #F5F5F5,
+    white_amber: #F2EFEA,
+    xanadu: #738678,
+    yellow:	#FFFF00
+);
+
+$static_spectrum_array : (
+    initial : initial, 
+    inherit : inherit
+);
+
+$alert_spectrum: (
+    error: #DC3545,
+    info: #0DCAF0,
+    success: #28A745,
+    warning: #FFC107
+);
+
+$display_array: (
+    none: none,
+    block: block,
+    inline: inline,
+    flex: flex,
+    inline-block: inline-block,
+    inline-flex: inline-flex,
+    grid: grid,
+    table: table,
+    table-cell: table-cell,
+    table-header-group: table-header-group,
+    one: 1,
+    zero: 0,
+    show: visible,
+    hide: hidden
+);
+
+$border_array: (solid,  dashed, dotted, double, groove, ridge, inset, outset);
+$edges : (top, bottom, right, left);
+
+$size_array : (
+    smallest: 0.5rem,
+    smaller: 0.75rem,
+    small: 0.875rem,
+    normal: 1rem,
+    large: 1.25rem,
+    larger: 1.5rem,
+    largest: 1.75rem,
+);
+
+// $size_array_alt : (
+//     smallest: 0.5rem,
+//     smaller: 0.75rem,
+//     small: 0.875rem,
+//     normal: 1rem,
+//     large: 1.25rem,
+//     larger: 1.5rem,
+//     largest: 1.75rem,
+// );
+
+$grid_array: (
+    100: 100,
+    90: 90,
+    95: 95,
+    87: 87.5,
+    85: 85,
+    83: 83.33,
+    80: 80,
+    75: 75,
+    70: 70,
+    66: 66.67,
+    65: 65,
+    60: 60,
+    50: 50,
+    40: 40,
+    35: 35,
+    33: 33.33,
+    30: 30,
+    25: 25,
+    20: 20,
+    15: 15,
+    17: 16.66,
+    13: 12.5,
+    10: 10,
+    7: 7,
+    5: 5
+);
+
+$fit-array: (
+    contain: contain,
+    cover: cover,
+    fill: fill,
+    scale-down: scale-down
+);
+
+$filter-array: (
+    blur: blur(4px),
+    bright: brightness(250%),
+    contrast: contrast(180%),
+    gray: grayscale(100%), 
+    hue: hue-rotate(180deg),
+    opacity: opacity(50%),
+    saturate: saturate(7),
+    sepia: sepia(100%),
+    shadow: drop-shadow(8px 8px 10px map-get($spectrum_array, green))
+);
+
+ 
+$zindex-navbar:             1000;
+$zindex-totop:              1005;
+$zindex-dropdown:           1010;
+$zindex-sticky:             1020;
+$zindex-fixed:              1030;
+$zindex-modal-backdrop:     1040;
+$zindex-offcanvas:          1050;
+$zindex-modal:              1060;
+$zindex-popover:            1070;
+$zindex-tooltip:            1080;
+$zindex-snackbar:           1090;
+$zindex-mobile-navbar:      1100;
+$zindex-hero:               1999;
+
+$list-array: (
+    disc
+);
+
+$breakpoints: (
+    rp1: 576px,
+    rp2: 768px,
+    rp3: 991px,
+    rp4: 1200px,
+    rp5: 1400px
+);
+
+$screen_breakpoints: (
+    maxrp1: 576px,
+    maxsrp2: 768px,
+    maxsrp3: 991px,
+    maxrp4: 1200px,
+    maxrp5: 1400px,
+);
+
+$arrow-separator: '\2192';
+$dot-separator: '\2022';
+$angle-separator: '\276F';
+$angle-up-separator: '\2B9F';
+$angle_down_separator: '\2B9D';
+$check_mark: '\2713';
+$mobile_menu: '\002630';
+$close-menu: '\2715'; 
+$plus: '\002B';
+$quote-mark: '\2014 \00A0';
+$circle: '\25C9';
+$bullseye: '\25C9';
+$caret-up: '\25B2';
+$caret-down: '\25BC';
+

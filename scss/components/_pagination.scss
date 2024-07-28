@@ -1,0 +1,110 @@
+.sw_pagination {
+    &.panel-collapse {
+        & .sw_pagination-menu:not(:last-child) {margin-right: .5rem;}
+    }
+    &-wrapper {
+        @include flexbox();
+        padding-left: 0;
+    }
+    &-menu {
+        &.active {
+            & .sw_pagination-link {
+                @include border-with-color($default-color);
+                background-color: $default-color;
+                color: $default-clear-bg;
+                z-index: 2;
+                margin-right: 0;
+            }
+        }
+    }
+    &-link {
+        @include default-border();
+        @include transition(all, .3, ease);
+        padding: var(--normal-padding);
+        font-size: var(--normal-fontsize);
+        background-color: $default-clear-bg;
+        position: relative;
+        display: map-get($display_array, block);
+        margin-left: -1px;
+        line-height: 1.25;
+        &:hover {background-color: $default-bg;}
+    }
+
+    &-largest {
+        & .sw_pagination-link {
+            padding: var(--largest-padding);
+            font-size: var(--largest-fontsize);
+        }
+    }
+
+    &-larger {
+        & .sw_pagination-link {
+            padding: var(--larger-padding);
+            font-size: var(--larger-fontsize);
+        }
+    }
+
+    &-large {
+        & .sw_pagination-link {
+            padding: var(--large-padding);
+            font-size: var(--large-fontsize);
+        }
+    }
+
+    &-small {
+        & .sw_pagination-link {
+            padding: var(--small-padding);
+            font-size: var(--small-fontsize);
+        }
+    }
+
+    &-smaller {
+        & .sw_pagination-link {
+            padding: var(--smaller-padding);
+            font-size: var(--smaller-fontsize);
+        }
+    }
+
+    &-smallest {
+        & .sw_pagination-link {
+            padding: var(--smallest-padding);
+            font-size: var(--smallest-fontsize);
+        }
+    }
+
+    // work on this:
+    &-round {
+        & .sw_pagination-link {
+            @include round();
+            @include no-border();
+            @include transition(all, .3, ease); 
+            @include square(35px);
+            margin: 0 5px;
+            line-height: 1.75;
+            //line-height: 1.5;
+            // background-color: transparent;
+        }
+    }
+
+    &-center {
+        & .sw_pagination-wrapper {@include justify-content(center);}
+    }
+
+    &-right {
+        & .sw_pagination-wrapper {@include justify-content(end);}
+    }
+
+    @for $rsq from 1 through 8 {
+        &.sw_rsq-#{$rsq} {
+            & .sw_pagination-menu {
+                &:first-child {
+                   & .sw_pagination-link {border-radius: calc($rsq / 4) * 1rem 0 0 calc($rsq / 4) * 1rem;}
+                }
+
+                &:last-child {
+                    & .sw_pagination-link {border-radius: 0 calc($rsq / 4) * 1rem  calc($rsq / 4) * 1rem 0;}
+                 }
+            }
+        }
+    }
+}

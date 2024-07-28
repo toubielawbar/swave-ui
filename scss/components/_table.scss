@@ -1,0 +1,91 @@
+.sw_table {
+    width: 100%;
+    border-collapse: collapse;
+    &-responsive {
+        @include overflow(horizontal);
+    }
+    & th, & td {
+        @include default-border();
+        padding: var(--normal-padding);
+        font-size: var(--normal-fontsize);
+        border-collapse: collapse;
+    }
+
+    &-hover {
+        & tr {
+            &:hover {
+                background-color: $default-bg;
+            }
+        }
+    }
+
+
+    &-border {
+        &-half {
+            & th, & td {
+                @include no-border-direction(left);
+                @include no-border-direction(right);
+                vertical-align: middle;
+            }
+        }
+        &-side {
+            & th, & td {
+                @include no-border-direction(top);
+                @include no-border-direction(bottom);
+                vertical-align: middle;
+            }
+        }
+        &-none {
+            @include default-border();
+            & th, & td {
+                @include no-border();
+            }
+        }
+    }
+
+    &-striped {
+        & th {
+            background-color: $default-bg;
+        }
+        & tr {
+            &:nth-child(even) {
+                background-color: $default-bg;
+            }
+            &:nth-child(odd) {
+                background-color: $default-clear-bg;
+            }
+        }
+    }
+    &-styled {@include styled();} 
+
+}
+
+@each $spectrum, $spectrum_value in $spectrum_array {
+    .sw_table.bg-#{"" + $spectrum} { 
+        & {
+            th, td {
+                background-color: $spectrum_value;
+            }
+        }
+        
+    }
+    .sw_table.br-#{"" + $spectrum} {
+        & {
+            & {
+                th, td {
+                    border-color: $spectrum_value;
+                }
+            }
+        }
+        
+    }
+    .sw_table.st-#{"" + $spectrum} {
+        & {
+            & {
+                th, td {
+                    color: $spectrum_value;
+                }
+            }
+        }
+    }
+}

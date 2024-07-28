@@ -1,0 +1,161 @@
+.sw_snackbar {
+    //@include default-font-small();
+    @include animation(sweep, 1.2);
+    background-color: $default-bg;
+    z-index: $zindex-snackbar;
+    position: fixed;
+    width: 400px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    pointer-events: auto;
+    background-clip: padding-box;
+    &:not(:has(> .sw_snackbar-header)) {padding: var(--normal-padding) !important;}
+    &:has(> .sw_snackbar-header) {& .sw_snackbar-wrapper {padding: var(--normal-padding);}}
+    &[data-mode="live"], &[data-mode="control"] {@include no-display();}
+    
+    &-wrapper, &-title {display: map-get($display_array, inline-block) !important;}
+    &-header, &-footer {
+        @include no-outline();
+        @include default-padding-smaller();
+        @include default-font-normal();
+        background: transparent;
+
+        & > * {margin-bottom: 0;}
+    }
+
+    &-header {@include default-border-direction(bottom);}
+    &-footer {@include default-border-direction(top);}
+   
+    &>p, &>h1, &>h2, &>h3, &>h4, &>h5, &>h6 {margin-bottom: 0;}
+    &-styled {@include styled_fit();}
+    &-outline {@include outlined();}
+    &-block {width: 100%;}
+
+    &-position-bl {
+        left: 10px;
+        bottom: 0;
+      }
+    
+      &-position-br {
+        right: 10px;
+        bottom: 0;
+      }
+    
+      &-position-tl {
+        left: 10px;
+        top: 10px;
+      }
+    
+      &-position-tr {
+        right: 10px;
+        top: 10px;
+      }
+    
+      &-position-bc {
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        transform: translateX(-50%) !important;
+      }
+    
+      &-position-tc {
+        left: 50%;
+        right: 50%;
+        top: 10px;
+        transform: translateX(-50%) !important;
+      }
+
+      &-flow {
+        &-top {
+          &::before {
+            background: $default-color;
+            position: absolute;
+            content: "";
+            height: 3px;
+            width: 100%;
+            top: 0;
+            right: 0;
+            animation: progress 5s linear forwards;
+          }
+        }
+        
+        &-bottom {
+          &::before {
+            background: $default-color;
+            position: absolute;
+            content: "";
+            height: 3px;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            animation: progress 5s linear forwards;
+          }
+        }
+      }
+
+      &-largest {
+        @include default-font-largest();
+        & .sw_close {@include default-font-largest();}
+        &:not(:has(> .sw_snackbar-header)) {padding: var(--largest-padding) !important;}
+        &:has(> .sw_snackbar-header) {& .sw_snackbar-wrapper {padding: var(--largest-padding);}}
+        & .sw_snackbar-wrapper {
+          & > * {@include default-font-largest();}
+        }
+      }
+
+      &-larger {
+        @include default-font-larger();
+        & .sw_close {@include default-font-larger();}
+        &:not(:has(> .sw_snackbar-header)) {padding: var(--larger-padding) !important;}
+        &:has(> .sw_snackbar-header) {& .sw_snackbar-wrapper {padding: var(--larger-padding);}}
+        & .sw_snackbar-wrapper {
+          & > * {@include default-font-larger();}
+        }
+      }
+  
+      &-large {
+        @include default-font-large();
+        & .sw_close {@include default-font-large();}
+        &:not(:has(> .sw_snackbar-header)) {padding: var(--large-padding) !important;}
+        &:has(> .sw_snackbar-header) {& .sw_snackbar-wrapper {padding: var(--large-padding);}}
+        & .sw_snackbar-wrapper {
+          & > * {@include default-font-large();}
+        }
+      }
+  
+      &-small {
+        @include default-font-small();
+        & .sw_close {@include default-font-small();}
+        &:not(:has(> .sw_snackbar-header)) {padding: var(--small-padding) !important;}
+        &:has(> .sw_snackbar-header) {& .sw_snackbar-wrapper {padding: var(--small-padding);}}
+        & .sw_snackbar-wrapper {
+          & > * {@include default-font-small();}
+        }
+      }
+
+      &-smaller {
+        @include default-font-smaller();
+        & .sw_close {@include default-font-smaller();}
+        &:not(:has(> .sw_snackbar-header)) {padding: var(--smaller-padding) !important;}
+        &:has(> .sw_snackbar-header) {& .sw_snackbar-wrapper {padding: var(--smaller-padding);}}
+        & .sw_snackbar-wrapper {
+          & > * {@include default-font-smaller();}
+        }
+      }
+
+      &-smallest {
+        @include default-font-small();
+        & .sw_close {@include default-font-smallest();}
+        &:not(:has(> .sw_snackbar-header)) {padding: var(--smallest-padding) !important;}
+        &:has(> .sw_snackbar-header) {& .sw_snackbar-wrapper {padding: var(--smallest-padding);}}
+        & .sw_snackbar-wrapper {
+          & > * {@include default-font-smallest();}
+        }
+      }
+}
+
+@each $flow, $value  in $spectrum_array {
+    .sw_snackbar.flow-#{"" + $flow} {
+        &::before {background: $value !important;}
+    }
+}

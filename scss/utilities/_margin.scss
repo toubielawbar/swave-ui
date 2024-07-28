@@ -1,0 +1,103 @@
+.sw_mg-auto {margin: auto !important;}
+.sw_mt-auto {margin-top: auto !important;}
+.sw_mb-auto {margin-bottom: auto !important;}
+.sw_mr-auto {margin-right: auto !important;}
+.sw_ml-auto {margin-left: auto !important;}
+.sw_mlr-auto {margin-left: auto !important;margin-right: auto !important;}
+
+
+@for $margin from 0 to 31 {
+    @if ($margin == 0) {
+        .sw_mg-#{$margin} {
+            margin: calc($margin / 4)  !important;
+        }
+    } @else {
+        .sw_mg-#{$margin} {
+            margin: calc($margin / 4) + $rem !important;
+        }
+    }
+}
+
+@for $margin_top from 0 to 31 {
+    @if ($margin_top == 0) {
+        .sw_mt-#{$margin_top} {
+            margin-top: calc($margin_top / 4) !important;
+        }
+    } @else {
+        .sw_mt-#{$margin_top} {
+            margin-top: calc($margin_top / 4) + rem !important;
+        }
+    }
+}
+
+@for $margin_bottom from 0 to 31 {
+
+    @if ($margin_bottom == 0) {
+        .sw_mb-#{$margin_bottom} {
+            margin-bottom: calc($margin_bottom / 4) !important;
+        }
+    } @else {
+        .sw_mb-#{$margin_bottom} {
+            margin-bottom: calc($margin_bottom / 4) + rem !important;
+        }
+    }
+    
+}
+
+@for $margin_right from 0 to 31 {
+
+    @if ($margin_right == 0) {
+        .sw_mr-#{$margin_right} {
+            margin-right: calc($margin_right / 4) !important;
+        }
+    } @else {
+        .sw_mr-#{$margin_right} {
+            margin-right: calc($margin_right / 4) + rem !important;
+        }
+    }
+}
+
+@for $margin_left from 0 to 31 {
+
+    @if ($margin_left == 0) {
+        .sw_ml-#{$margin_left} {
+            margin-left: calc($margin_left / 4) !important;
+        }
+    } @else {
+        .sw_ml-#{$margin_left} {
+            margin-left: calc($margin_left / 4) + rem !important;
+        }
+    }
+}
+
+@for $margin_top_bottom from 0 to 31 {
+
+    @if ($margin_top_bottom == 0) {
+        .sw_mtb-#{$margin_top_bottom} {
+            margin-top: calc($margin_top_bottom / 4)  !important;
+            margin-bottom: calc($margin_top_bottom / 4)  !important;
+        }
+    } @else {
+        .sw_mtb-#{$margin_top_bottom} {
+            margin-top: calc($margin_top_bottom / 4) + rem !important;
+            margin-bottom: calc($margin_top_bottom / 4) + rem !important;
+        }
+    }
+}
+
+@for $margin_left_right from 0 to 31 {
+
+    @if ($margin_left_right == 0) {
+        .sw_mlr-#{$margin_left_right} {
+            margin-left: calc($margin_left_right / 4) !important;
+            margin-right: calc($margin_left_right / 4) !important;
+        }
+    } @else {
+        .sw_mlr-#{$margin_left_right} {
+            margin-left: calc($margin_left_right / 4) + rem !important;
+            margin-right: calc($margin_left_right / 4) + rem !important;
+        }
+    }
+
+    
+}

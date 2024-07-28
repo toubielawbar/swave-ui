@@ -1,0 +1,22 @@
+@each $display, $display_value in $display_array {
+    @if (($display == one) or ($display == zero)) {
+        .sw_ds-#{$display} {
+            opacity: $display_value !important;
+        }
+    } @else if (($display == show) or ($display == hide)) {
+        .sw_ds-#{$display} {
+            visibility: $display_value !important;
+        }
+    } @else {
+        @if ($display == flex) {
+            .sw_ds-#{$display} {
+                @include flexbox();
+            }
+        } @else {
+            .sw_ds-#{$display} {
+                display: $display_value !important;
+            }
+        }
+        
+    }
+}

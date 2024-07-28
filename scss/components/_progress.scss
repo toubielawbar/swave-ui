@@ -1,0 +1,57 @@
+.sw_progress {
+    @include flexbox();
+    @include text-align(center);
+    background-color: $default-bg;
+    overflow: hidden;
+    line-height: 1rem;
+    width: 100%;
+    &-bar {
+        //@include font_size();
+        @include transition(width, .6, ease);
+        @include text-align(center);
+        @include default-font-smaller();
+        height: 0.9rem;
+        background-color: $default-color;
+        white-space: nowrap;
+        margin-bottom: 0 !important;
+        overflow: hidden;
+        color: #fff;
+    }
+
+    &-status, &-value {
+        position: absolute;
+        margin-top: -20px;
+        color: map-get($spectrum_array, mute);
+        font-size: 0.8571em;
+    }
+
+    &-value { right: 45px;}
+
+    &-largest {
+        & .sw_progress-bar {height: 1.25rem;}
+    }
+
+    &-larger {
+        & .sw_progress-bar {height: 1rem;}
+    }
+
+    &-large {
+        & .sw_progress-bar {height: 0.9rem;}
+    }
+
+    &-small {
+        & .sw_progress-bar {height: 0.8rem;}
+    }
+
+    &-smaller {
+        & .sw_progress-bar {height: 0.7rem;}
+    }
+
+    &-smallest {
+        & .sw_progress-bar {height: 0.55rem;}
+    }
+
+    &-minimal {
+        & .sw_progress-bar {height: 1px;}
+    }
+}
