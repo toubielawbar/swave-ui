@@ -1,0 +1,56 @@
+{
+  "name": "swave-ui",
+  "version": "1.0.0",
+  "description": "Swave-ui is a versatile CSS framework designed to empower developers with a comprehensive suite of utilities, helpers, and components for creating stunning user interfaces and websites. With its intuitive, well-organized design system ",
+  "main": "dist/js/swavy-ui.min.js",
+  "style": "dist/css/swavy-ui.min.css",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toubielawbar/swave-ui.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "frontend",
+    "ui",
+    "design",
+    "sass",
+    "mobile",
+    "responsive",
+    "swave",
+    "template",
+    "component",
+    "js",
+    "stylesheet",
+    "scss"
+  ],
+  "author": "Oluwatobi H. Giwa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toubielawbar/swave-ui/issues"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/toubielawbar"
+    },
+    {
+      "type": "patreon",
+      "url": "https://patreon.com/swave-ui"
+    }
+  ],
+  "homepage": "https://github.com/toubielawbar/swave-ui#readme",
+  "jspm": {
+    "registry": "npm",
+    "main": "js/swave-ui",
+    "directories": {
+      "lib": "dist"
+    }
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  }
+}
